@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import styles from './TodoForm.module.css'
+
 export const TodoForm = ({ addTodo }) => {
   const [text, setText] = useState('')
 
@@ -10,7 +12,7 @@ export const TodoForm = ({ addTodo }) => {
   }
 
   return (
-    <>
+    <div className={styles.todoFormContainer}>
       <form onSubmit={onSubmitHandler}>
         <label>
           <input
@@ -22,6 +24,6 @@ export const TodoForm = ({ addTodo }) => {
         </label>
         <button type='submit'>Submit</button>
       </form>
-    </>
+    </div>
   )
 }
