@@ -1,9 +1,10 @@
 import styles from './Button.module.css'
 
-export const Button = ({ onClick, children, title, disabled = false }) => {
+export const Button = (props) => {
+  const { children, disabled = false } = props
   return (
     <>
-      <button className={styles.button} onClick={onClick} title={title}>
+      <button {...props} className={styles.button} disabled={disabled}>
         {children}
       </button>
     </>
